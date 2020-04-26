@@ -1,9 +1,12 @@
 package jmichel;
 
+
 public class Main {
     public static void main(String[] args) {
         Midi midi = new Midi();
         String notes = midi.getNotes();
-        System.out.println(notes);
+        System.out.println("notes: {}" + notes);
+        Fiddle fiddle = new Fiddle();
+        fiddle.play(notes);
     }
 }
