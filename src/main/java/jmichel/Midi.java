@@ -8,8 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Midi {
-    final String midiFile = "/home/m/Downloads/oxygene-midi/oxygene-04.mid";
-    public Pattern getPattern() throws IOException, InvalidMidiDataException {
+    public Pattern getPattern(String midiFile) throws IOException, InvalidMidiDataException {
         return MidiFileManager.loadPatternFromMidi(new File(midiFile));
     }
 }
