@@ -2,7 +2,6 @@ package jmichel;
 
 import org.apache.commons.cli.*;
 import org.jfugue.pattern.Pattern;
-import org.jfugue.pattern.Token;
 
 import javax.sound.midi.InvalidMidiDataException;
 import java.io.IOException;

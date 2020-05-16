@@ -1,4 +1,5 @@
 package jmichel;
+
 import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 
