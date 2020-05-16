@@ -2,6 +2,7 @@ package jmichel;
 
 import org.apache.commons.cli.*;
 import org.jfugue.pattern.Pattern;
+import org.jfugue.pattern.Token;
 
 import javax.sound.midi.InvalidMidiDataException;
 import java.io.IOException;
@@ -21,17 +22,21 @@ public class Main {
             String midiFile = cmd.getOptionValue("midi");
             System.out.println("midiFile: " + midiFile);
 
-            Midi midi = new Midi();
-            Pattern notes = null;
             try {
-                notes = midi.getPattern(midiFile);
+                Midi midi = new Midi();
+                Pattern notes = midi.getPattern(midiFile);
+                System.out.println("notes: " + notes);
+
+                String theme = midi.getThemeFromO4(notes);
+                System.out.println("theme: " + theme);
+
+                Pattern pattern = new Pattern(theme);
+                Fiddle fiddle = new Fiddle();
+                fiddle.play(pattern);
+
             } catch (IOException | InvalidMidiDataException e) {
                 e.printStackTrace();
             }
-            Fiddle fiddle = new Fiddle();
-            fiddle.play(notes);
-
-
         } catch (ParseException e) {
             e.printStackTrace();
         }
