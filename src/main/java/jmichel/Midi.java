@@ -3,6 +3,7 @@ package jmichel;
 import org.jfugue.midi.MidiFileManager;
 import org.jfugue.pattern.Pattern;
 import org.jfugue.pattern.Token;
+import org.jfugue.player.Player;
 
 import javax.sound.midi.InvalidMidiDataException;
 import java.io.File;
@@ -30,5 +31,10 @@ public class Midi {
             }
         }
         return builder.toString();
+    }
+
+    public void play(Pattern pattern) {
+        Player player = new Player();
+        player.play(pattern);
     }
 }

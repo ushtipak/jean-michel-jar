@@ -30,8 +30,7 @@ public class Main {
                 System.out.println("theme: " + theme);
 
                 Pattern pattern = new Pattern(theme);
-                Fiddle fiddle = new Fiddle();
-                fiddle.play(pattern);
+                midi.play(pattern);
 
             } catch (IOException | InvalidMidiDataException e) {
                 e.printStackTrace();
