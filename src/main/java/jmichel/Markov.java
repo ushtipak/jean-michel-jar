@@ -46,6 +46,15 @@ public class Markov {
         int idx = new Random().nextInt(words.length);
         ArrayList<String> chain = new ArrayList<>(Collections.singletonList((words[idx])));
         System.out.println("chain: " + chain);
+
+        for (int i = 0; i < 80; i++) {
+            String lastLink = chain.get(chain.size() - 1);
+            Random random = new Random();
+            int rnd = random.nextInt(field.get(lastLink).size());
+            chain.add(field.get(lastLink).get(rnd));
+        }
+        System.out.println("result: " + chain);
+
     }
 
 }
