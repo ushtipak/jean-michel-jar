@@ -26,7 +26,9 @@ public class Markov {
         }
         System.out.println("longestKey: " + longestKey);
         String lastWord = words[words.length - 1];
-        field.put(lastWord, new ArrayList<>(Collections.singletonList(longestKey)));
+
+        String key = longestKey;
+        field.computeIfAbsent(lastWord, k -> new ArrayList<>(Collections.singletonList(key)));
 
         return field;
     }
