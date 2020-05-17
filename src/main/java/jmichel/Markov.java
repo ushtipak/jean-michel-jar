@@ -9,7 +9,7 @@ public class Markov {
 
         for (int i = 0; i < (words.length - 1); i++) {
             if (field.get(words[i]) != null) {
-                field.get(words[i]).add(words[i+1]);
+                field.get(words[i]).add(words[i + 1]);
             } else {
                 field.put(words[i], new ArrayList<>(Collections.singletonList(words[i + 1])));
             }
@@ -25,6 +25,8 @@ public class Markov {
             }
         }
         System.out.println("longestKey: " + longestKey);
+        String lastWord = words[words.length - 1];
+        field.put(lastWord, new ArrayList<>(Collections.singletonList(longestKey)));
 
         return field;
     }
