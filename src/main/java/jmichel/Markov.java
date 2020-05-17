@@ -23,11 +23,7 @@ public class Markov {
         System.out.println("pattern: " + pattern);
 
         String[] words = pattern.split(" ");
-        System.out.print("words: ");
-        for (String word : words) {
-            System.out.print(word + " ");
-        }
-        System.out.println();
+        System.out.println("words: " + Arrays.toString(words));
 
         Map<String, ArrayList<String>> field = train(words);
         System.out.println("field: " + field);
