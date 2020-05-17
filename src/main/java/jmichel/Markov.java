@@ -15,6 +15,17 @@ public class Markov {
             }
         }
 
+        String longestKey = null;
+        int maxLength = 0;
+
+        for (Map.Entry<String, ArrayList<String>> entry : field.entrySet()) {
+            if (entry.getValue().size() > maxLength) {
+                maxLength = entry.getValue().size();
+                longestKey = entry.getKey();
+            }
+        }
+        System.out.println("longestKey: " + longestKey);
+
         return field;
     }
 
