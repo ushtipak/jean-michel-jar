@@ -42,6 +42,10 @@ public class Markov {
 
         Map<String, ArrayList<String>> field = train(words);
         System.out.println("field: " + field);
+
+        int idx = new Random().nextInt(words.length);
+        ArrayList<String> chain = new ArrayList<>(Collections.singletonList((words[idx])));
+        System.out.println("chain: " + chain);
     }
 
 }
