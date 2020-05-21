@@ -57,8 +57,7 @@ public class Markov {
             builder.append(s).append(" ");
         }
         String chainStr = builder.toString();
-
-
+        
         System.out.println("chain: " + chainStr);
         return chainStr;
     }
