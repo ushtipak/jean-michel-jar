@@ -5,6 +5,7 @@ import org.jfugue.pattern.Pattern;
 
 import javax.sound.midi.InvalidMidiDataException;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,7 +45,12 @@ public class Main {
 
                 Pattern pattern = new Pattern(Markov.andreyUp(theme, 92));
                 log.log(Level.INFO, "generated: " + pattern);
-//                midi.play(pattern);
+
+                String output = String.format("new-oxygene-%s.mid", Instant.now().getEpochSecond());
+                log.log(Level.FINEST, "output: " + output);
+
+                midi.save(pattern, output);
+                midi.play(pattern);
 
             } catch (IOException | InvalidMidiDataException e) {
                 log.log(Level.SEVERE, e.getMessage(), e);
