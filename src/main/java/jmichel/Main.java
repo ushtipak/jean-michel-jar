@@ -42,7 +42,7 @@ public class Main {
                 String theme = midi.getThemeFromO4(notes);
                 log.log(Level.FINE, "theme: " + theme);
 
-                Pattern pattern = new Pattern(Markov.andreyUp(theme));
+                Pattern pattern = new Pattern(Markov.andreyUp(theme, 92));
                 log.log(Level.INFO, "generated: " + pattern);
 //                midi.play(pattern);
 
