@@ -24,7 +24,6 @@ public class Markov {
                 longestKey = entry.getKey();
             }
         }
-        System.out.println("longestKey: " + longestKey);
         String lastWord = words[words.length - 1];
 
         String key = longestKey;
@@ -34,13 +33,8 @@ public class Markov {
     }
 
     public static String andreyUp(String pattern) {
-        System.out.println("pattern: " + pattern);
-
         String[] words = pattern.split(" ");
-        System.out.println("words: " + Arrays.toString(words));
-
         Map<String, ArrayList<String>> field = train(words);
-        System.out.println("field: " + field);
 
         int idx = new Random().nextInt(words.length);
         ArrayList<String> chain = new ArrayList<>(Collections.singletonList((words[idx])));
@@ -56,10 +50,7 @@ public class Markov {
         for (String s : chain) {
             builder.append(s).append(" ");
         }
-        String chainStr = builder.toString();
-        
-        System.out.println("chain: " + chainStr);
-        return chainStr;
+        return builder.toString();
     }
 
 }
