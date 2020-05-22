@@ -40,6 +40,13 @@ public class Midi {
     }
 
     /**
+     * Save pattern to a MIDI file
+     */
+    public void save(Pattern pattern, String output) throws IOException {
+        MidiFileManager.savePatternToMidi(pattern, new File(output));
+    }
+
+    /**
      * Play given pattern within JVM
      */
     public void play(Pattern pattern) {
