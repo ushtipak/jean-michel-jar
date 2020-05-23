@@ -43,7 +43,7 @@ public class Main {
                 String theme = midi.getThemeFromO4(notes);
                 log.log(Level.FINE, "theme: " + theme);
 
-                Pattern pattern = new Pattern(Markov.andreyUp(theme, 92));
+                Pattern pattern = new Pattern(Markov.andreyUp(theme, 48));
                 log.log(Level.INFO, "generated: " + pattern);
 
                 String output = String.format("new-oxygene-%s.mid", Instant.now().getEpochSecond());
